@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Agaliwa Wisdom — Social Media Manager & Graphic Designer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="avatar" id="avatar">AW</div>
+      <div>
+        <h1 id="fullname">Agaliwa Wisdom</h1>
+        <div style="display:flex;gap:8px;align-items:center">
+          <div class="small">Social Media Manager • Graphic Designer</div>
+          <div class="badge">WAEC</div>
+        </div>
+        <p class="lead">I help small businesses and creators grow their brand with high-converting social content and sharp visual design.</p>
+      </div>
+      <div style="margin-left:auto;text-align:right" class="top-actions">
+        <button class="ghost" onclick="prefillExample()">Load Example Assets</button>
+        <button class="btn" onclick="downloadHTML()">Download HTML</button>
+      </div>
+    </header>
+
+    <div class="grid">
+      <main>
+        <section class="card">
+          <div class="section-title"><strong>About Me</strong><span class="small">Based in [Your City]</span></div>
+          <p class="small">I'm a practical, hands-on Social Media Manager and Graphic Designer with experience creating content for Instagram, Facebook, and TikTok. I specialise in visual storytelling, brand kits, and campaign graphics that get shares and conversions.</p>
+        </section>
+
+        <section class="card" style="margin-top:12px">
+          <div class="section-title"><strong>Portfolio</strong><span class="small">Recent work & sample designs</span></div>
+          <div class="portfolio-grid" id="portfolioGrid"></div>
+          <div style="margin-top:12px;display:flex;gap:8px;align-items:center">
+            <button class="btn" onclick="addSampleProject()">+ Add Sample</button>
+            <button class="ghost" onclick="clearPortfolio()">Clear</button>
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:12px">
+          <div class="section-title"><strong>Experience</strong><span class="small">Freelance & internships</span></div>
+          <ul style="margin:0;padding-left:18px;color:var(--muted)">
+            <li><strong>Freelance Social Media Manager & Designer</strong> — Managed pages, designed creatives, ran small ad campaigns. (2022 — Present)</li>
+            <li style="margin-top:6px"><strong>Design Intern</strong> — Assisted in brand and campaign artwork. (Year)</li>
+          </ul>
+        </section>
+
+        <section class="card" style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap">
+          <div style="flex:1;min-width:220px">
+            <div class="section-title"><strong>Skills</strong><span class="small">Core tools</span></div>
+            <div class="skills" id="skills">
+              <div class="chip">Content Strategy</div>
+              <div class="chip">Instagram Reels</div>
+              <div class="chip">Graphic Design</div>
+              <div class="chip">Branding</div>
+              <div class="chip">Canva</div>
+              <div class="chip">Photoshop</div>
+              <div class="chip">Meta Business Suite</div>
+            </div>
+          </div>
+          <div style="width:240px">
+            <div class="section-title"><strong>Education</strong><span class="small">Qualifications</span></div>
+            <div class="small">West African Examinations Council (WAEC)<br>Year: <span id="waecYear">[Insert year]</span></div>
+          </div>
+        </section>
+      </main>
+
+      <aside>
+        <div class="card">
+          <div class="section-title"><strong>Credentials & Uploads</strong><span class="small">Keep scanned WAEC, certificates</span></div>
+          <input type="file" id="fileInput" accept="image/*,.pdf" multiple onchange="handleFiles(event)">
+          <div class="upload-list" id="uploadList"></div>
+          <div style="margin-top:10px;display:flex;gap:8px">
+            <button class="btn" onclick="saveUploads()">Save locally</button>
+            <button class="ghost" onclick="clearUploads()">Clear</button>
+          </div>
+          <p class="small" style="margin-top:8px">Files are stored only in your browser (localStorage). Use the Download HTML button to save this portfolio file with your data embedded.</p>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <div class="section-title"><strong>Contact</strong><span class="small">Hire me</span></div>
+          <div class="small">Email: <span id="email">you@example.com</span></div>
+          <div class="small">Phone: <span id="phone">+234 000 000 0000</span></div>
+          <div style="margin-top:10px">
+            <div style="font-weight:700">Send a message</div>
+            <div class="contact-grid" style="margin-top:8px">
+              <input id="cname" placeholder="Your name">
+              <input id="cemail" placeholder="Your email">
+            </div>
+            <textarea id="cmessage" placeholder="Message"></textarea>
+            <div style="display:flex;gap:8px;margin-top:8px">
+              <button class="btn" onclick="sendDemoMessage()">Send</button>
+              <button class="ghost" onclick="resetContact()">Reset</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;text-align:center">
+          <div class="small">Want this as a PDF?</div>
+          <div style="margin-top:8px"><button class="ghost" onclick="window.print()">Print / Save as PDF</button></div>
+        </div>
+      </aside>
+    </div>
+
+    <footer class="small">Built with ❤️ — Customize your details and replace sample images. Make sure to replace contact & city info before sharing.</footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
