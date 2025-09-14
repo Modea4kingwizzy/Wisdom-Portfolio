@@ -7,7 +7,36 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+  <section class="card">
+  <div class="section-title"><strong>My Credentials</strong></div>
+  <p class="small">Upload and view your certificates or WAEC documents here.</p>
+  
+  <input type="file" id="uploadDocs" multiple>
+  <ul id="docsList"></ul>
+</section>
+
+<script>
+  // Handle document uploads
+  const uploadInput = document.getElementById("uploadDocs");
+  const docsList = document.getElementById("docsList");
+
+  uploadInput.addEventListener("change", function() {
+    docsList.innerHTML = ""; // clear list before reloading
+    [...this.files].forEach(file => {
+      const li = document.createElement("li");
+      const link = document.createElement("a");
+
+      // Create a temporary link to view file
+      link.href = URL.createObjectURL(file);
+      link.textContent = file.name;
+      link.target = "_blank";
+
+      li.appendChild(link);
+      docsList.appendChild(li);
+    });
+  });
+</script>
+   <body>
   <div class="container">
     <header>
       <div class="avatar" id="avatar">AW</div>
@@ -28,7 +57,7 @@
     <div class="grid">
       <main>
         <section class="card">
-          <div class="section-title"><strong>About Me</strong><span class="small">Based in [Your City]</span></div>
+          <div class="section-title"><strong>About Me</strong><span class="small">Based in Nasarawa State</span></div>
           <p class="small">I'm a practical, hands-on Social Media Manager and Graphic Designer with experience creating content for Instagram, Facebook, and TikTok. I specialise in visual storytelling, brand kits, and campaign graphics that get shares and conversions.</p>
         </section>
 
@@ -42,10 +71,10 @@
         </section>
 
         <section class="card" style="margin-top:12px">
-          <div class="section-title"><strong>Experience</strong><span class="small">Freelance & internships</span></div>
+          <div class="section-title"><strong>Experience</strong><span class="small">Freelance & Computer Operator</span></div>
           <ul style="margin:0;padding-left:18px;color:var(--muted)">
             <li><strong>Freelance Social Media Manager & Designer</strong> — Managed pages, designed creatives, ran small ad campaigns. (2022 — Present)</li>
-            <li style="margin-top:6px"><strong>Design Intern</strong> — Assisted in brand and campaign artwork. (Year)</li>
+            <li style="margin-top:6px"><strong>Computer Operator and Manager</strong> — Expertise in use of Corel Draw and Powerpoint For Visual Presentations and Graphic designing. 2024-2025</li>
           </ul>
         </section>
 
@@ -64,7 +93,8 @@
           </div>
           <div style="width:240px">
             <div class="section-title"><strong>Education</strong><span class="small">Qualifications</span></div>
-            <div class="small">West African Examinations Council (WAEC)<br>Year: <span id="waecYear">[Insert year]</span></div>
+            <div class="small">West African Examinations Council (WAEC)<br>Year: <span id="waecYear">2022</span></div>
+             <div class="small">Advanced Diploma in Computer<br>Year: <span id="waecYear">2024</span></div>
           </div>
         </section>
       </main>
